@@ -1,0 +1,14 @@
+transformers
+tensorflow
+keras
+nltk
+numpy
+seaborn
+matplotlib
+tqdm
+fastapi
+uvicorn
+scikit-learn
+pandas
+tf-keras
+torch
