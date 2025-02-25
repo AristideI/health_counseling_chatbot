@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import { useRef, useState } from "react";
 import {
   ActivityIndicator,
@@ -50,7 +49,7 @@ export default function HomeScreen() {
       scrollToBottom();
 
       const response = await fetch(
-        "http://127.0.0.1:7860/api/v1/run/af690f77-9d87-46c4-8e5c-2abb52cccb26?stream=false",
+        "http://127.0.0.1:7860/api/v1/run/11cf3bd5-1b6d-4300-a67b-254c58b2576c?stream=false",
         {
           method: "POST",
           headers: {
@@ -67,6 +66,8 @@ export default function HomeScreen() {
       );
 
       const data = await response.json();
+      console.log(data);
+
       setMessages((prev) => [
         ...prev,
         {
