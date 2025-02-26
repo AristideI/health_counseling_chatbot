@@ -48,22 +48,12 @@ export default function HomeScreen() {
       setInputText("");
       scrollToBottom();
 
-      const response = await fetch(
-        "http://127.0.0.1:7860/api/v1/run/11cf3bd5-1b6d-4300-a67b-254c58b2576c?stream=false",
-        {
-          method: "POST",
-          headers: {
-            Authorization: "Bearer <TOKEN>",
-            "Content-Type": "application/json",
-            "x-api-key": "sk--KoipjN5k1dHCTUtqSiSjctQ8qfzwkPSmm9JRSL8_Is",
-          },
-          body: JSON.stringify({
-            input_value: message,
-            output_type: "chat",
-            input_type: "chat",
-          }),
-        }
-      );
+      const response = await fetch("http://127.0.0.1:7860/chat", {
+        method: "POST",
+        body: JSON.stringify({
+          input_value: message,
+        }),
+      });
 
       const data = await response.json();
       console.log(data);
@@ -90,7 +80,6 @@ export default function HomeScreen() {
       scrollViewRef?.current?.scrollToEnd({ animated: true });
     }, 100);
   }
-  // sk--KoipjN5k1dHCTUtqSiSjctQ8qfzwkPSmm9JRSL8_Is
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
